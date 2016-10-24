@@ -7,6 +7,7 @@
     "test": "exit 0",
     "lint": "exit 0"
   },
+  "repository": "richardsimko/find-properties-usage",
   "author": "Richard Simko",
   "license": "MIT",
   "dependencies": {
