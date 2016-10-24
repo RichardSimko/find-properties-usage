@@ -1,0 +1,16 @@
+{
+  "name": "find-properties-usage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Simko",
+  "license": "MIT",
+  "dependencies": {
+    "cli": "^1.0.1",
+    "properties": "^1.2.1",
+    "recursive-readdir": "^2.1.0"
+  }
+}
