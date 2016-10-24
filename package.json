@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "cli": "^1.0.1",
+    "commander": "^2.9.0",
     "properties": "^1.2.1",
     "recursive-readdir": "^2.1.0"
   }
