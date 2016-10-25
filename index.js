@@ -12,42 +12,49 @@ const options = cli.parse({
 
 const foundKeys = [];
 
+
 properties.parse(options.file, {path: true}, (error, obj) => {
   if (error) {
     cli.error(error);
   }
   else {
     const keys = Object.keys(obj);
-    let openReaders = 0;
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      recursiveReaddir('../connect-refinedtheme', ['gen', 'node_modules', '*.properties'], (error, files) => {
-        if (!error) {
-          for (let i = 0; i < files.length; i++) {
-            const lineReader = readline.createInterface({
-              input: fs.createReadStream(files[i])
-            });
-            openReaders++;
-            lineReader.on('line', (line) => {
-              if (line.indexOf(key) > 0 && foundKeys.indexOf(key) < 0) {
-                foundKeys.push(key);
-                cli.info('Found ' + key);
-                lineReader.close();
-              }
-            });
-            lineReader.on('close', () => {
-              openReaders--;
-              if (openReaders === 0) {
-                cli.info('Done!');
-                console.log(foundKeys);
-              }
-            })
+    const done = function() {
+      if (keys.length === 0) {
+        console.info('All keys are in use!');
+      }
+      else {
+        console.log(keys.length + ' unused keys:');
+        console.info(keys);
+      }
+    };
+    recursiveReaddir('../connect-refinedtheme', ['.git', 'gen', 'node_modules', '*.properties'], (error, files) => {
+      if (!error) {
+        for (let i = 0; i < files.length; i++) {
+          if (keys.length === 0) {
+            done();
           }
+          const lineReader = readline.createInterface({
+            input: fs.createReadStream(files[i])
+          });
+          lineReader.on('line', (line) => {
+            for (let j = keys.length - 1; j >= 0; j--) {
+              const key = keys[j];
+              if (key && line.match(new RegExp('[\'"]' + key + '[\'"]'))) {
+                keys.splice(j, 1);
+              }
+            }
+          });
+          lineReader.on('close', () => {
+            if (i === files.length - 1) {
+              done();
+            }
+          })
         }
-        else {
-          cli.error(error);
-        }
-      });
-    }
+      }
+      else {
+        cli.error(error);
+      }
+    });
   }
 });
