@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "start": "node index.js",
   "scripts": {
     "test": "exit 0",
     "lint": "exit 0"
