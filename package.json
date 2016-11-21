@@ -8,6 +8,11 @@
     "test": "exit 0",
     "lint": "exit 0"
   },
+  "preferGlobal": true,
+  "bin": {
+    "fpu": "index.js",
+    "find-properties-usage": "index.js"
+  },
   "repository": "richardsimko/find-properties-usage",
   "author": "Richard Simko",
   "license": "MIT",
