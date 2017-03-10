@@ -1,6 +1,6 @@
 {
   "name": "find-properties-usage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Finds unused i18n properties as well as properties used in code that aren't defined",
   "main": "index.js",
   "start": "node index.js",
