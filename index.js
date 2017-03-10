@@ -48,7 +48,7 @@ properties.parse(options.file, {path: true}, (error, obj) => {
           console.log(suspectedUndefinedKeys);
         }
       };
-      recursiveReaddir('../connect-refinedtheme', ['.git', 'gen', 'node_modules', '*.properties'], (error, files) => {
+      recursiveReaddir(options.baseDir, ['.git', 'gen', 'node_modules', '*.properties'], (error, files) => {
         if (!error) {
           for (let i = 0; i < files.length; i++) {
             if (keys.length === 0) {
