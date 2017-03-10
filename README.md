@@ -1,6 +1,12 @@
 # Find Properties Usage
 
+[![Build Status](https://travis-ci.org/richardsimko/find-properties-usage.svg?branch=master)](https://travis-ci.org/richardsimko/find-properties-usage)
+
 Finds which i18n strings in a .properties file which are unused in the specified directory.
+
+## Installation ##
+
+    npm install -g find-properties-usage
 
 ## Usage ##
 
