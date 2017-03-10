@@ -10,5 +10,4 @@ deploy:
     secure: YdfVGWXGvFzDrd4g7th7p5xHoymMvvGY2rGKTLMQ/Gu06Js22zpWBFCjjQ3as9COeGlTsN+SVqUuosydYcYnic2CMoBE2Vca3J3o1VxSJ11LMJWtPSyMSklQ9mgF0otwt5828DDZTq4DXaU6mT7ueycet7NNKyoBGLaZq1FZApwEVbXs86ZxLPUx4uEiVKTBERRCRIIzefcbxlQJnYbxd8KEue0LoxYkXq2N6uIq+AkllWb1GVc7yUeC+6/VBFQsUZsmliCQUXBzZMdIalRDjQy9JC0+WEwYGB9SAnjP3LL5w0vopln88G/2g7gEtBN91AvaNdbrdiVg32ZjZZp6hKV5QvlRdya/10Yh62NUTHIXfCAVNEZGPWyTM3BSHBh/yY9/jOqYr1/49HN3Wqox1YXv7PaOw1Kbc3/fzFnAK8di0bLbZ0dtvfAEw+iyLL7eRzxkyp7eS8iaDsbBM+6b+QZYaCC/qbGXdx7cYUyUXFMuI0rPogNUEm/4VSy+jgtHseb9htP7y6K/dl+LgrHhGXR73OXQRPtifIu/WL8pXov4BsxuM2NCCNlRm9gnVjWCXgx6EOtWuIXax6TVMqeNmE3MvLOEKi5bihVX+UuSZKMLb3l275U+0x+dBEKskngMdC+eIh6C3SOkOV5BaYMAmNFuyQ/vM8iPGR29C1Nf+yQ=
   on:
     repo: richardsimko/find-properties-usage
-    branch: master
-
+    tags: true
